@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(#111, #000);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* RAMA */
+.frame {
+  padding: 18px;
+  background: #111;
+  box-shadow: 0 40px 120px rgba(0,0,0,.8);
+}
+
+/* PŁÓTNO */
+.canvas {
+  position: relative;
+  width: 440px;
+  height: 560px;
+  background: linear-gradient(
+    135deg,
+    #4fb3c1 0%,
+    #2f7f8c 45%,
+    #1f5962 100%
+  );
+  overflow: hidden;
+  
+}
+
+/* TŁO MALARSKIE */
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, #1e5a66, #3c9aa5),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+   
+}
+
+/* TWARZ */
+.face {
+  position: absolute;
+  border: 9px solid #111;
+}
+
+.face.left {
+  width: 240px;
+  height: 420px;
+  background: #e5b6ad;
+  left: 30px;
+  top: 120px;
+  clip-path: polygon(0 0, 85% 5%, 70% 100%, 0 90%);
+}
+
+.face.right {
+  width: 240px;
+  height: 380px;
+  background: #d19a8f;
+  right: 30px;
+  top: 90px;
+  clip-path: polygon(20% 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+/* NOS */
+.nose {
+  position: absolute;
+  width: 70px;
+  height: 260px;
+  background: #c79287;
+  border: 7px solid #111;
+  left: 160px;
+  top: 140px;
+  clip-path: polygon(50% 0, 90% 15%, 70% 100%, 30% 100%);
+}
+
+/* OCZY */
+.eye {
+  position: absolute;
+  background: #2b2b2b;
+  border: 5px solid #111;
+}
+
+.eye-left {
+  width: 80px;
+  height: 45px;
+  left: 90px;
+  top: 220px;
+  transform: skew(-18deg);
+}
+
+.eye-right {
+  width: 55px;
+  height: 75px;
+  right: 140px;
+  top: 200px;
+  transform: rotate(14deg);
+}
+
+/* USTA */
+.mouth {
+  position: absolute;
+  width: 90px;
+  height: 28px;
+  background: #111;
+  left: 145px;
+  top: 385px;
+}
+
+/* WŁOSY */
+.hair {
+  position: absolute;
+  width: 260px;
+  height: 90px;
+  background: #111;
+  left: 70px;
+  top: 70px;
+  clip-path: polygon(0 100%, 20% 20%, 50% 0, 80% 20%, 100% 100%);
+}
+
+/* POCIĄGNIĘCIA PĘDZLA */
+.stroke {
+  position: absolute;
+  border: 6px solid #111;
+  opacity: .85;
+}
+
+.s1 {
+  width: 300px;
+  height: 420px;
+  left: 60px;
+  top: 60px;
+  transform: rotate(-4deg);
+}
+
+.s2 {
+  width: 180px;
+  height: 300px;
+  left: 150px;
+  top: 140px;
+  transform: rotate(8deg);
+}
+
+.s3 {
+  width: 140px;
+  height: 260px;
+  right: 40px;
+  top: 120px;
+  transform: rotate(-6deg);
+}
+
+/* PODPIS */
+.signature {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#sig {
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: .6;
+}
